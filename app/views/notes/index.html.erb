@@ -1,0 +1,41 @@
+<h1>Notes</h1>
+
+<%= link_to 'New Note', new_note_path, class: 'btn btn-info' %>
+
+<br />
+<br />
+
+<div class="container">         
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Tags</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @notes.present? %>
+        <% @notes.each do |note| %>
+          <tr>
+            <td><%= note.title %></td>
+            <td><%= note.body.truncate_words(7) %></td>
+            <td><%= note.tags %></td>
+            <td>
+              <%= link_to 'Show', note, class: 'btn btn-info' %> &nbsp;
+              <%= link_to 'Edit', edit_note_path(note), class: 'btn btn-info' %> &nbsp;
+              <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="4">There are not any notes.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
