@@ -1,24 +1,26 @@
 # README
+Ruby - 2.7.2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails - Rails 6.0.3.3
 
-Things you may want to cover:
+UI - Bootstrap(4.5)
 
-* Ruby version
+# Live Demo URL
+https://warm-wildwood-28778.herokuapp.com/
 
-* System dependencies
+# Validations:
+1) Notes title and body must present.
 
-* Configuration
+# Steps
+Step 0: Clone the repo: <br />
+Step 1: bundle install <br />
+Step 2: npm install <br />
+Step 3: rails db:setup <br />
+Step 4: rails s <br />
 
-* Database creation
+# Additional functionalities
+1) Test cases
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Test cases
+I have implemented some basic unit tests for validation of notes title and body.
+run "rails test" in repository to run it.
