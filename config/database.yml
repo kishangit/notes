@@ -17,4 +17,6 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['POSTGRESQL_DB'] %>
+  database: myapp_production
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
