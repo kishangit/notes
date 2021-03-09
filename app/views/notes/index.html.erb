@@ -5,9 +5,9 @@
 <br />
 <br />
 
-<div class="container">         
-  <table class="table table-hover table-striped">
-    <thead>
+<div>         
+  <table class="table table-hover table-striped" style="border: 1px solid;">
+    <thead class="bg-secondary">
       <tr>
         <th>Title</th>
         <th>Body</th>
@@ -21,7 +21,11 @@
           <tr>
             <td><%= note.title %></td>
             <td><%= note.body.truncate_words(7) %></td>
-            <td><%= note.tags %></td>
+            <td>
+              <% note.tags.split(",").each do |tag| %>
+                <span class="badge badge-primary"><%= tag %></span>
+              <% end %>
+            </td>
             <td>
               <%= link_to 'Show', note, class: 'btn btn-info' %> &nbsp;
               <%= link_to 'Edit', edit_note_path(note), class: 'btn btn-info' %> &nbsp;
